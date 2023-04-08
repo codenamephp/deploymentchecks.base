@@ -16,8 +16,8 @@
   </component>
   <component name="PhpInterpreters">
     <interpreters>
-      <interpreter id="c58a022e-0f96-4fa4-abe3-6b6978f2340a" name="application" home="docker-compose://DATA" debugger_id="php.debugger.XDebug">
-        <remote_data INTERPRETER_PATH="php" HELPERS_PATH="/opt/.phpstorm_helpers" INITIALIZED="false" VALID="true" RUN_AS_ROOT_VIA_SUDO="false" DOCKER_ACCOUNT_NAME="Docker" DOCKER_COMPOSE_SERVICE_NAME="application" DOCKER_REMOTE_PROJECT_PATH="/opt/project">
+      <interpreter id="c58a022e-0f96-4fa4-abe3-6b6978f2340a" name="application" home="docker-compose://DATA" false="false" debugger_id="php.debugger.XDebug">
+        <remote_data INTERPRETER_PATH="php" HELPERS_PATH="/opt/.phpstorm_helpers" VALID="true" RUN_AS_ROOT_VIA_SUDO="false" DOCKER_ACCOUNT_NAME="Docker" DOCKER_COMPOSE_SERVICE_NAME="application" DOCKER_REMOTE_PROJECT_PATH="/opt/project">
           <type_data command="EXEC" />
           <dockerComposeConfigurationPaths>
             <item value="$PROJECT_DIR$/docker-compose.yml" />
@@ -118,6 +118,12 @@
   <component name="PhpProjectSharedConfiguration" php_language_level="8.2" />
   <component name="PhpStanOptionsConfiguration">
     <option name="transferred" value="true" />
+  </component>
+  <component name="PhpUnit">
+    <phpunit_settings>
+      <phpunit_by_interpreter interpreter_id="c58a022e-0f96-4fa4-abe3-6b6978f2340a" load_method="PHPUNIT_PHAR" configuration_file_path="/app/test/phpunit.dist.xml" custom_loader_path="" phpunit_phar_path="/app/tools/phpunit.phar" use_configuration_file="true" />
+      <PhpUnitSettings custom_loader_path="$PROJECT_DIR$/vendor/autoload.php" phpunit_phar_path="" />
+    </phpunit_settings>
   </component>
   <component name="PsalmOptionsConfiguration">
     <option name="transferred" value="true" />

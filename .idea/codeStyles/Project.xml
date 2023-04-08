@@ -1,0 +1,251 @@
+<component name="ProjectCodeStyleConfiguration">
+  <code_scheme name="Project" version="173">
+    <option name="OTHER_INDENT_OPTIONS">
+      <value>
+        <option name="INDENT_SIZE" value="2" />
+        <option name="TAB_SIZE" value="2" />
+      </value>
+    </option>
+    <option name="RIGHT_MARGIN" value="160" />
+    <option name="ENABLE_SECOND_REFORMAT" value="true" />
+    <option name="KEEP_BLANK_LINES_IN_DECLARATIONS" value="0" />
+    <option name="KEEP_BLANK_LINES_IN_CODE" value="1" />
+    <option name="KEEP_BLANK_LINES_BEFORE_RBRACE" value="0" />
+    <option name="DO_NOT_FORMAT">
+      <list>
+        <fileSet type="namedScope" name="NoFormat" pattern="file:psalm-baseline.xml||file:tools/*" />
+      </list>
+    </option>
+    <CssCodeStyleSettings>
+      <option name="HEX_COLOR_LOWER_CASE" value="true" />
+      <option name="HEX_COLOR_SHORT_FORMAT" value="true" />
+    </CssCodeStyleSettings>
+    <HTMLCodeStyleSettings>
+      <option name="HTML_ATTRIBUTE_WRAP" value="0" />
+      <option name="HTML_TEXT_WRAP" value="0" />
+      <option name="HTML_KEEP_BLANK_LINES" value="1" />
+      <option name="HTML_DO_NOT_INDENT_CHILDREN_OF" value="" />
+      <option name="HTML_KEEP_WHITESPACES_INSIDE" value="span,pre,textarea,label" />
+      <option name="HTML_DONT_ADD_BREAKS_IF_INLINE_CONTENT" value="title,h1,h2,h3,h4,h5,h6,p,a" />
+    </HTMLCodeStyleSettings>
+    <JSCodeStyleSettings version="0">
+      <option name="SPACE_BEFORE_FUNCTION_LEFT_PARENTH" value="false" />
+      <option name="USE_DOUBLE_QUOTES" value="false" />
+      <option name="ENFORCE_TRAILING_COMMA" value="Remove" />
+      <option name="SPACE_BEFORE_ASYNC_ARROW_LPAREN" value="false" />
+    </JSCodeStyleSettings>
+    <PHPCodeStyleSettings>
+      <option name="COMMA_AFTER_LAST_ARRAY_ELEMENT" value="true" />
+      <option name="PHPDOC_BLANK_LINE_BEFORE_TAGS" value="true" />
+      <option name="THROWS_WEIGHT" value="3" />
+      <option name="PARAM_WEIGHT" value="1" />
+      <option name="RETURN_WEIGHT" value="2" />
+      <option name="AUTHOR_WEIGHT" value="0" />
+      <option name="DEPRECATED_WEIGHT" value="5" />
+      <option name="SEE_WEIGHT" value="4" />
+      <option name="SINCE_WEIGHT" value="6" />
+      <option name="LOWER_CASE_BOOLEAN_CONST" value="true" />
+      <option name="LOWER_CASE_NULL_CONST" value="true" />
+      <option name="ELSE_IF_STYLE" value="COMBINE" />
+      <option name="FIELDS_DEFAULT_VISIBILITY" value="public" />
+      <option name="VARIABLE_NAMING_STYLE" value="CAMEL_CASE" />
+      <option name="KEEP_RPAREN_AND_LBRACE_ON_ONE_LINE" value="true" />
+      <option name="KEEP_BLANK_LINES_AFTER_LBRACE" value="0" />
+      <option name="SPACE_BEFORE_CLOSURE_LEFT_PARENTHESIS" value="false" />
+      <option name="FORCE_SHORT_DECLARATION_ARRAY_STYLE" value="true" />
+      <option name="SPACE_BEFORE_COLON_IN_RETURN_TYPE" value="true" />
+      <option name="FORCE_EMPTY_METHODS_IN_ONE_LINE" value="true" />
+    </PHPCodeStyleSettings>
+    <TypeScriptCodeStyleSettings version="0">
+      <option name="USE_DOUBLE_QUOTES" value="false" />
+    </TypeScriptCodeStyleSettings>
+    <codeStyleSettings language="CSS">
+      <indentOptions>
+        <option name="INDENT_SIZE" value="2" />
+        <option name="CONTINUATION_INDENT_SIZE" value="4" />
+        <option name="TAB_SIZE" value="2" />
+      </indentOptions>
+    </codeStyleSettings>
+    <codeStyleSettings language="HTML">
+      <indentOptions>
+        <option name="INDENT_SIZE" value="2" />
+        <option name="CONTINUATION_INDENT_SIZE" value="2" />
+        <option name="TAB_SIZE" value="2" />
+      </indentOptions>
+    </codeStyleSettings>
+    <codeStyleSettings language="JSON">
+      <indentOptions>
+        <option name="CONTINUATION_INDENT_SIZE" value="2" />
+        <option name="TAB_SIZE" value="2" />
+      </indentOptions>
+    </codeStyleSettings>
+    <codeStyleSettings language="JavaScript">
+      <option name="LINE_COMMENT_ADD_SPACE" value="false" />
+      <option name="SPACE_BEFORE_IF_PARENTHESES" value="false" />
+      <option name="SPACE_BEFORE_WHILE_PARENTHESES" value="false" />
+      <option name="SPACE_BEFORE_FOR_PARENTHESES" value="false" />
+      <option name="SPACE_BEFORE_CATCH_PARENTHESES" value="false" />
+      <option name="SPACE_BEFORE_SWITCH_PARENTHESES" value="false" />
+      <option name="SPACE_BEFORE_ELSE_KEYWORD" value="false" />
+      <option name="SPACE_BEFORE_WHILE_KEYWORD" value="false" />
+      <option name="SPACE_BEFORE_CATCH_KEYWORD" value="false" />
+      <option name="SPACE_BEFORE_FINALLY_KEYWORD" value="false" />
+      <indentOptions>
+        <option name="INDENT_SIZE" value="2" />
+        <option name="TAB_SIZE" value="2" />
+      </indentOptions>
+    </codeStyleSettings>
+    <codeStyleSettings language="LESS">
+      <indentOptions>
+        <option name="CONTINUATION_INDENT_SIZE" value="4" />
+        <option name="TAB_SIZE" value="2" />
+      </indentOptions>
+    </codeStyleSettings>
+    <codeStyleSettings language="PHP">
+      <option name="KEEP_BLANK_LINES_IN_DECLARATIONS" value="1" />
+      <option name="KEEP_BLANK_LINES_IN_CODE" value="1" />
+      <option name="KEEP_BLANK_LINES_BEFORE_RBRACE" value="0" />
+      <option name="BLANK_LINES_AFTER_PACKAGE" value="1" />
+      <option name="BLANK_LINES_AROUND_FIELD" value="1" />
+      <option name="BLANK_LINES_AFTER_CLASS_HEADER" value="1" />
+      <option name="CLASS_BRACE_STYLE" value="1" />
+      <option name="METHOD_BRACE_STYLE" value="1" />
+      <option name="ALIGN_MULTILINE_PARAMETERS" value="false" />
+      <option name="ALIGN_MULTILINE_FOR" value="false" />
+      <option name="SPACE_AFTER_TYPE_CAST" value="true" />
+      <option name="SPACE_BEFORE_IF_PARENTHESES" value="false" />
+      <option name="SPACE_BEFORE_WHILE_PARENTHESES" value="false" />
+      <option name="SPACE_BEFORE_FOR_PARENTHESES" value="false" />
+      <option name="SPACE_BEFORE_CATCH_PARENTHESES" value="false" />
+      <option name="SPACE_BEFORE_SWITCH_PARENTHESES" value="false" />
+      <option name="SPACE_BEFORE_ELSE_KEYWORD" value="false" />
+      <option name="SPACE_BEFORE_WHILE_KEYWORD" value="false" />
+      <option name="SPACE_BEFORE_CATCH_KEYWORD" value="false" />
+      <option name="SPACE_BEFORE_FINALLY_KEYWORD" value="false" />
+      <option name="KEEP_SIMPLE_METHODS_IN_ONE_LINE" value="true" />
+      <option name="KEEP_SIMPLE_CLASSES_IN_ONE_LINE" value="true" />
+      <indentOptions>
+        <option name="INDENT_SIZE" value="2" />
+        <option name="CONTINUATION_INDENT_SIZE" value="2" />
+        <option name="TAB_SIZE" value="2" />
+      </indentOptions>
+      <arrangement>
+        <groups>
+          <group>
+            <type>GETTERS_AND_SETTERS</type>
+            <order>KEEP</order>
+          </group>
+          <group>
+            <type>OVERRIDDEN_METHODS</type>
+            <order>KEEP</order>
+          </group>
+        </groups>
+        <rules>
+          <section>
+            <rule>
+              <match>
+                <CONST>true</CONST>
+              </match>
+            </rule>
+          </section>
+          <section>
+            <rule>
+              <match>
+                <AND>
+                  <FIELD>true</FIELD>
+                  <modifiers />
+                </AND>
+              </match>
+            </rule>
+          </section>
+          <section>
+            <rule>
+              <match>
+                <CONSTRUCTOR>true</CONSTRUCTOR>
+              </match>
+            </rule>
+          </section>
+          <section>
+            <rule>
+              <match>
+                <AND>
+                  <METHOD>true</METHOD>
+                  <NAME>setUp</NAME>
+                  <modifiers />
+                </AND>
+              </match>
+            </rule>
+          </section>
+          <section>
+            <rule>
+              <match>
+                <AND>
+                  <METHOD>true</METHOD>
+                  <NAME>tearDown</NAME>
+                  <modifiers />
+                </AND>
+              </match>
+            </rule>
+          </section>
+          <section>
+            <rule>
+              <match>
+                <AND>
+                  <METHOD>true</METHOD>
+                  <NAME>(get|set).*</NAME>
+                  <modifiers />
+                </AND>
+              </match>
+            </rule>
+          </section>
+          <section>
+            <rule>
+              <match>
+                <AND>
+                  <METHOD>true</METHOD>
+                  <modifiers />
+                </AND>
+              </match>
+            </rule>
+          </section>
+          <section>
+            <rule>
+              <match>
+                <TRAIT>true</TRAIT>
+              </match>
+            </rule>
+          </section>
+          <section>
+            <rule>
+              <match>
+                <INTERFACE>true</INTERFACE>
+              </match>
+            </rule>
+          </section>
+          <section>
+            <rule>
+              <match>
+                <CLASS>true</CLASS>
+              </match>
+            </rule>
+          </section>
+        </rules>
+      </arrangement>
+    </codeStyleSettings>
+    <codeStyleSettings language="TypeScript">
+      <option name="RIGHT_MARGIN" value="140" />
+      <indentOptions>
+        <option name="INDENT_SIZE" value="2" />
+        <option name="CONTINUATION_INDENT_SIZE" value="2" />
+        <option name="TAB_SIZE" value="2" />
+      </indentOptions>
+    </codeStyleSettings>
+    <codeStyleSettings language="XML">
+      <indentOptions>
+        <option name="INDENT_SIZE" value="2" />
+        <option name="CONTINUATION_INDENT_SIZE" value="2" />
+        <option name="TAB_SIZE" value="2" />
+      </indentOptions>
+    </codeStyleSettings>
+  </code_scheme>
+</component>
