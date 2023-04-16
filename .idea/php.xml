@@ -12,6 +12,15 @@
   <component name="PhpIncludePathManager">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/packages/http/vendor/composer" />
+      <path value="$PROJECT_DIR$/packages/http/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/packages/http/vendor/psr/http-client" />
+      <path value="$PROJECT_DIR$/packages/http/vendor/psr/http-factory" />
+      <path value="$PROJECT_DIR$/packages/http/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/packages/http/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/packages/http/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/packages/http/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/packages/http/vendor/ralouphie/getallheaders" />
     </include_path>
   </component>
   <component name="PhpInterpreters">
