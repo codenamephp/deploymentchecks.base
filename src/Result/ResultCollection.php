@@ -34,6 +34,11 @@ final class ResultCollection implements ResultInterface {
    */
   public function __construct(ResultInterface ...$results) { $this->results = $results; }
 
+  public function add(ResultInterface $result) : self {
+    $this->results[] = $result;
+    return $this;
+  }
+
   public function successful() : bool {
     foreach($this->results as $result) {
       if(!$result->successful()) return false;

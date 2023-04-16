@@ -60,4 +60,15 @@ final class ResultCollectionTest extends TestCase {
 
     self::assertFalse((new ResultCollection($result1, $result2, $result3))->successful());
   }
+
+  public function testAdd() : void {
+    $result1 = $this->createMock(ResultInterface::class);
+    $result2 = $this->createMock(ResultInterface::class);
+    $result3 = $this->createMock(ResultInterface::class);
+
+    $resultCollection = new ResultCollection($result1, $result2);
+    $resultCollection->add($result3);
+
+    self::assertSame([$result1, $result2, $result3], $resultCollection->results);
+  }
 }
