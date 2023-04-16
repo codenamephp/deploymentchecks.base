@@ -17,8 +17,6 @@
 
 namespace de\codenamephp\deploymentchecks\base\Result;
 
-use de\codenamephp\deploymentchecks\base\ExitCode\ExitCodeInterface;
-
 /**
  * Interface for results of deployment checks
  *
@@ -34,11 +32,4 @@ interface ResultInterface {
    * @return bool
    */
   public function successful() : bool;
-
-  /**
-   * The exit code of the result
-   *
-   * @return ExitCodeInterface
-   */
-  public function exitCode() : ExitCodeInterface;
 }

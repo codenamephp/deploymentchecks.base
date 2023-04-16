@@ -24,7 +24,7 @@ use de\codenamephp\deploymentchecks\base\ExitCode\ExitCodeInterface;
  *
  * @psalm-api
  */
-interface WithExitCodeInterface {
+interface WithExitCodeInterface extends ResultInterface {
 
   public function exitCode() : ExitCodeInterface;
 }
