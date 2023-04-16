@@ -14,5 +14,6 @@
     },
     "mutators": {
         "@default": true
-    }
+    },
+    "testFrameworkOptions": "--testsuite=Infection",
 }

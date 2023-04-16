@@ -34,12 +34,13 @@
     "psalm": "tools/psalm --threads=10 --long-progress",
     "composer-unused": "tools/composer-unused --no-progress --no-interaction",
     "composer-require-checker": "tools/composer-require-checker --no-interaction",
-    "infection": "XDEBUG_MODE=coverage tools/infection --min-msi=95 --min-covered-msi=95 --threads=4 --no-progress --show-mutations --debug",
+    "infection": "XDEBUG_MODE=coverage tools/infection --min-msi=100 --min-covered-msi=100 --threads=4 --no-progress --show-mutations --debug --log-verbosity=all",
     "ci-all": [
       "@phpunit",
       "@psalm",
       "@composer-unused",
-      "@composer-require-checker"
+      "@composer-require-checker",
+      "@infection"
     ]
   },
   "scripts-descriptions": {
