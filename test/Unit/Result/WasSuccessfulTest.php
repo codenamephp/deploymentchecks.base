@@ -15,18 +15,22 @@
  *  limitations under the License.
  */
 
-namespace de\codenamephp\deploymentchecks\base\Result;
+namespace de\codenamephp\deploymentchecks\base\test\Unit\Result;
 
-/**
- * A single result of a check with just the success state as immutable property
- *
- * @psalm-api
- */
-final class Immutable implements ResultInterface {
+use de\codenamephp\deploymentchecks\base\Result\WasSuccessful;
+use PHPUnit\Framework\TestCase;
 
-  public function __construct(public readonly bool $successful) {}
+final class WasSuccessfulTest extends TestCase {
 
-  public function successful() : bool {
-    return $this->successful;
+  public function test__construct() : void {
+    $result = new WasSuccessful(true);
+
+    self::assertTrue($result->successful);
+  }
+
+  public function testSuccessful() : void {
+    $result = new WasSuccessful(true);
+
+    self::assertTrue($result->successful());
   }
 }
