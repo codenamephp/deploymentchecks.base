@@ -1,5 +1,4 @@
 <?php declare(strict_types=1);
-
 /*
  *  Copyright 2023 Bastian Schwarz <bastian@codename-php.de>.
  *
@@ -16,18 +15,17 @@
  *  limitations under the License.
  */
 
-use de\codenamephp\deploymentchecks\http\Check\HttpCheck;
-use de\codenamephp\deploymentchecks\http\Check\Test\BodyEquals;
-use de\codenamephp\deploymentchecks\http\Check\Test\StatusCode;
-use GuzzleHttp\Psr7\Request;
+namespace de\codenamephp\deploymentchecks\base\Check;
 
-require_once __DIR__ . '/vendor/autoload.php';
+/**
+ * Interface for checks that have a name, e.g. to output status or to identify a check in the result or a log
+ */
+interface WithNameInterface {
 
-$check = new HttpCheck(
-  new Request('GET', 'https://www.google.com'),
-  new StatusCode(200),
-  new BodyEquals('Hello World')
-);
-$result = $check->run();
-$successful = $result->successful();
-var_dump($successful);
+  /**
+   * Returns the name of the check
+   *
+   * @return string
+   */
+  public function name() : string;
+}

@@ -15,14 +15,14 @@
  *  limitations under the License.
  */
 
-namespace de\codenamephp\deploymentchecks\http;
+namespace de\codenamephp\deploymentchecks\http\Result;
 
 use de\codenamephp\deploymentchecks\base\Result\ResultInterface;
 use de\codenamephp\deploymentchecks\base\Result\WithMessageInterface;
 
-final class HttpResult implements ResultInterface, WithMessageInterface {
+final readonly class HttpResult implements ResultInterface, WithMessageInterface {
 
-  public function __construct(public readonly bool $successful, public readonly string $message) {}
+  public function __construct(public bool $successful, public string $message) {}
 
   public function successful() : bool {
     return $this->successful;

@@ -1,5 +1,5 @@
 {
-  "name": "codenamephp/deploymentchecks.http",
+  "name": "codenamephp/deploymentchecks.async",
   "description": "",
   "type": "library",
   "license": "Apache-2.0",
@@ -11,22 +11,21 @@
   ],
   "require": {
     "php": "^8.2",
-    "guzzlehttp/guzzle": "^7.5",
-    "psr/http-message": "1 - 2",
-    "codenamephp/deploymentchecks.base": "*"
+    "codenamephp/deploymentchecks.base": "*",
+    "spatie/async": "^1.5"
   },
   "minimum-stability": "dev",
   "prefer-stable": true,
   "autoload": {
     "psr-4": {
-      "de\\codenamephp\\deploymentchecks\\http\\": [
+      "de\\codenamephp\\deploymentchecks\\async\\": [
         "src"
       ]
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "de\\codenamephp\\deploymentchecks\\http\\test\\": [
+      "de\\codenamephp\\deploymentchecks\\async\\test\\": [
         "test"
       ]
     }

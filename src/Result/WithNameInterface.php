@@ -15,17 +15,18 @@
  *  limitations under the License.
  */
 
-namespace de\codenamephp\deploymentchecks\http\Check\Test;
+namespace de\codenamephp\deploymentchecks\base\Result;
 
-use de\codenamephp\deploymentchecks\base\Result\ResultInterface;
-use de\codenamephp\deploymentchecks\http\Result\HttpResult;
-use Psr\Http\Message\ResponseInterface;
+/**
+ * Interface for results that have a name, usually used together with \de\codenamephp\deploymentchecks\base\Check\WithNameInterface in order to output
+ * the name of the check was run e.g. to identify it a log or to print the status to the console
+ */
+interface WithNameInterface {
 
-final class BodyEquals implements TestInterface {
-
-  public function __construct(public readonly string $expectedResponseText) {}
-
-  public function test(ResponseInterface $response) : ResultInterface {
-    return new HttpResult((string) $response->getBody() === $this->expectedResponseText, sprintf("Expected response text '%s' got '%s'", $this->expectedResponseText, $response->getBody()));
-  }
+  /**
+   * Returns the name of the result
+   *
+   * @return string
+   */
+  public function name() : string;
 }

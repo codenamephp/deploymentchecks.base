@@ -1,4 +1,5 @@
 <?php declare(strict_types=1);
+
 /*
  *  Copyright 2023 Bastian Schwarz <bastian@codename-php.de>.
  *
@@ -15,38 +16,36 @@
  *  limitations under the License.
  */
 
-namespace de\codenamephp\deploymentchecks\http\Check;
+namespace de\codenamephp\deploymentchecks\async;
 
 use de\codenamephp\deploymentchecks\base\Check\CheckInterface;
-use de\codenamephp\deploymentchecks\base\Check\WithNameInterface;
 use de\codenamephp\deploymentchecks\base\Result\ResultCollection;
 use de\codenamephp\deploymentchecks\base\Result\ResultInterface;
-use de\codenamephp\deploymentchecks\http\Check\Test\TestInterface;
-use GuzzleHttp\Client;
-use Psr\Http\Message\RequestInterface;
+use Spatie\Async\Pool;
+use Spatie\Fork\Fork;
+use Throwable;
 
-final class HttpCheck implements CheckInterface, WithNameInterface {
+final readonly class AsyncCheckCollection implements CheckInterface {
 
   /**
-   * @var array<TestInterface>
+   * @var array<CheckInterface>
    */
-  public array $tests = [];
+  public array $checks;
 
-  public function __construct(
-    public readonly RequestInterface $request,
-    public readonly string $name,
-    TestInterface ...$tests
-  ) {
-    $this->tests = $tests;
-  }
-
-  public function name() : string {
-    return $this->name;
+  public function __construct(public Pool $pool, CheckInterface ...$checks) {
+    $this->checks = $checks;
   }
 
   public function run() : ResultInterface {
-    $client = new Client();
-    $response = $client->send($this->request);
-    return new ResultCollection(...array_map(fn(TestInterface $test) => $test->test($response), $this->tests));
+    $result = new ResultCollection();
+    foreach($this->checks as $check) {
+      $parallelCheck = new ParallelCheck($check);
+      $this->pool
+        ->add($parallelCheck)
+        ->then(static fn($output) => $parallelCheck->success($result, $output))
+        ->catch(fn(Throwable $exception) => $parallelCheck->error($result, $exception));
+    }
+    $this->pool->wait();
+    return $result;
   }
 }
