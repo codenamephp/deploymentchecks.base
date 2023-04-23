@@ -15,14 +15,16 @@
  *  limitations under the License.
  */
 
-namespace de\codenamephp\deploymentchecks\base\Result;
+namespace de\codenamephp\deploymentchecks\base\Result\Collection;
+
+use de\codenamephp\deploymentchecks\base\Result\ResultInterface;
 
 /**
  * A collection of results. Can be used to aggregate results from multiple checks, e.g. run multiple http checks and treat them as a group
  *
  * @psalm-api
  */
-final class ResultCollection implements ResultInterface {
+final class ResultCollection implements ResultInterface, ResultCollectionInterface {
 
   /**
    * @var array<ResultInterface> The results that are aggregated in this collection

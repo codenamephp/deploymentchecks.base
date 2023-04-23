@@ -15,9 +15,9 @@
  *  limitations under the License.
  */
 
-namespace de\codenamephp\deploymentchecks\base\test\Unit\Result;
+namespace de\codenamephp\deploymentchecks\base\test\Unit\Result\Collection;
 
-use de\codenamephp\deploymentchecks\base\Result\ResultCollection;
+use de\codenamephp\deploymentchecks\base\Result\Collection\ResultCollection;
 use de\codenamephp\deploymentchecks\base\Result\ResultInterface;
 use PHPUnit\Framework\TestCase;
 
