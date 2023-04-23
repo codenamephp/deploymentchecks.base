@@ -17,37 +17,30 @@
 
 namespace de\codenamephp\deploymentchecks\async;
 
-use Closure;
+use de\codenamephp\deploymentchecks\async\ErrorHandler\ErrorHandlerInterface;
+use de\codenamephp\deploymentchecks\async\ErrorHandler\RethrowException;
+use de\codenamephp\deploymentchecks\async\SuccessHandler\AddToResultCollection;
+use de\codenamephp\deploymentchecks\async\SuccessHandler\SuccessHandlerInterface;
 use de\codenamephp\deploymentchecks\base\Check\CheckInterface;
-use de\codenamephp\deploymentchecks\base\Result\ResultCollection;
 use de\codenamephp\deploymentchecks\base\Result\ResultInterface;
-use Laravel\SerializableClosure\SerializableClosure;
-use Throwable;
 
-final class ParallelCheck {
-
-  public readonly SerializableClosure $successCallback;
-
-  public readonly SerializableClosure $errorCallback;
+final readonly class ParallelCheck implements ParallelCheckInterface, WithErrorHandlerInterface {
 
   public function __construct(
-    public readonly CheckInterface $check,
-    Closure|callable $successCallback = null,
-    Closure|callable $errorCallback = null
-  ) {
-    $this->successCallback = new SerializableClosure($successCallback ?? static fn(ResultCollection $resultCollection, ResultInterface $result) => $resultCollection->add($result));
-    $this->errorCallback = new SerializableClosure($errorCallback ?? static fn(ResultCollection $resultCollection, Throwable $exception) => throw $exception);
-  }
+    public CheckInterface $check,
+    public ?SuccessHandlerInterface $successHandler = new AddToResultCollection(),
+    public ?ErrorHandlerInterface $errorHandler = new RethrowException(),
+  ) {}
 
   public function __invoke() : ResultInterface {
     return $this->check->run();
   }
 
-  public function success(ResultCollection $resultCollection, ResultInterface $result) : mixed {
-    return ($this->successCallback)($resultCollection, $result);
+  public function successHandler() : SuccessHandlerInterface {
+    return $this->successHandler;
   }
 
-  public function error(ResultCollection $resultCollection, Throwable $exception) : mixed {
-    return ($this->errorCallback)($resultCollection, $exception);
+  public function errorHandler() : ErrorHandlerInterface {
+    return $this->errorHandler;
   }
 }

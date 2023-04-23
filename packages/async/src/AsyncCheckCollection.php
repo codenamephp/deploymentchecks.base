@@ -19,10 +19,9 @@
 namespace de\codenamephp\deploymentchecks\async;
 
 use de\codenamephp\deploymentchecks\base\Check\CheckInterface;
-use de\codenamephp\deploymentchecks\base\Result\ResultCollection;
+use de\codenamephp\deploymentchecks\base\Result\Collection\ResultCollection;
 use de\codenamephp\deploymentchecks\base\Result\ResultInterface;
 use Spatie\Async\Pool;
-use Spatie\Fork\Fork;
 use Throwable;
 
 final readonly class AsyncCheckCollection implements CheckInterface {
@@ -40,10 +39,10 @@ final readonly class AsyncCheckCollection implements CheckInterface {
     $result = new ResultCollection();
     foreach($this->checks as $check) {
       $parallelCheck = new ParallelCheck($check);
-      $this->pool
+      $runnable = $this->pool
         ->add($parallelCheck)
-        ->then(static fn($output) => $parallelCheck->success($result, $output))
-        ->catch(fn(Throwable $exception) => $parallelCheck->error($result, $exception));
+        ->then(static fn(ResultInterface $output) => $parallelCheck->successHandler()->handle($result, $output));
+      if($parallelCheck instanceof WithErrorHandlerInterface) $runnable->catch(static fn(Throwable $exception) => $parallelCheck->errorHandler()->handle($result, $exception));
     }
     $this->pool->wait();
     return $result;
