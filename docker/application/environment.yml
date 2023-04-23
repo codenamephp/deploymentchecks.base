@@ -1,3 +1,4 @@
 PHP_DEBUGGER=xdebug
 
 php.xdebug.mode=develop,debug
+php.xdebug.var_display_max_depth=10
