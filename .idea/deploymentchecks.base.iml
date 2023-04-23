@@ -2,6 +2,8 @@
 <module type="WEB_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" packagePrefix="de\codenamephp\deploymentchecks\base\" />
+      <sourceFolder url="file://$MODULE_DIR$/test" isTestSource="true" packagePrefix="de\codenamephp\deploymentchecks\base\test\" />
       <sourceFolder url="file://$MODULE_DIR$/packages/http/src" isTestSource="false" packagePrefix="de\codenamephp\deploymentchecks\http\" />
       <sourceFolder url="file://$MODULE_DIR$/packages/http/test" isTestSource="true" packagePrefix="de\codenamephp\deploymentchecks\http\test\" />
       <sourceFolder url="file://$MODULE_DIR$/packages/http/tests" isTestSource="true" />
