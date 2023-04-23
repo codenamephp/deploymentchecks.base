@@ -19,7 +19,7 @@ namespace de\codenamephp\deploymentchecks\http\Check;
 
 use de\codenamephp\deploymentchecks\base\Check\CheckInterface;
 use de\codenamephp\deploymentchecks\base\Check\WithNameInterface;
-use de\codenamephp\deploymentchecks\base\Result\ResultCollection;
+use de\codenamephp\deploymentchecks\base\Result\Collection\ResultCollection;
 use de\codenamephp\deploymentchecks\base\Result\ResultInterface;
 use de\codenamephp\deploymentchecks\http\Check\Test\TestInterface;
 use GuzzleHttp\Client;
