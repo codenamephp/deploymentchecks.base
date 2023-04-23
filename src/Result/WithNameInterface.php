@@ -20,6 +20,8 @@ namespace de\codenamephp\deploymentchecks\base\Result;
 /**
  * Interface for results that have a name, usually used together with \de\codenamephp\deploymentchecks\base\Check\WithNameInterface in order to output
  * the name of the check was run e.g. to identify it a log or to print the status to the console
+ *
+ * @psalm-api
  */
 interface WithNameInterface {
 

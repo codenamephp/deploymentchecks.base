@@ -19,6 +19,8 @@ namespace de\codenamephp\deploymentchecks\base\Check;
 
 /**
  * Interface for checks that have a name, e.g. to output status or to identify a check in the result or a log
+ *
+ * @psalm-api
  */
 interface WithNameInterface {
 
