@@ -22,7 +22,8 @@ use de\codenamephp\deploymentchecks\base\Check\Result\ResultInterface;
 use de\codenamephp\deploymentchecks\base\Check\WithNameInterface;
 use de\codenamephp\deploymentchecks\http\Check\Result\HttpCheckResult;
 use de\codenamephp\deploymentchecks\http\Check\Test\TestInterface;
-use GuzzleHttp\Client;
+use de\codenamephp\deploymentchecks\http\ClientFactory\ClientFactoryInterface;
+use de\codenamephp\deploymentchecks\http\ClientFactory\GuzzleClient;
 use Psr\Http\Message\RequestInterface;
 
 final class HttpCheck implements CheckInterface, WithNameInterface {
@@ -32,12 +33,15 @@ final class HttpCheck implements CheckInterface, WithNameInterface {
    */
   public array $tests = [];
 
+  public ClientFactoryInterface $clientFactory;
+
   public function __construct(
     public readonly RequestInterface $request,
     public readonly string $name,
     TestInterface ...$tests
   ) {
     $this->tests = $tests;
+    $this->clientFactory = new GuzzleClient();
   }
 
   public function name() : string {
@@ -45,8 +49,7 @@ final class HttpCheck implements CheckInterface, WithNameInterface {
   }
 
   public function run() : ResultInterface {
-    $client = new Client();
-    $response = $client->send($this->request);
+    $response = $this->clientFactory->create()->send($this->request);
     return new HttpCheckResult($this->name(), ...array_map(fn(TestInterface $test) => $test->test($response), $this->tests));
   }
 }
