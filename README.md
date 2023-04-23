@@ -65,7 +65,7 @@ It's very easy to run multiple checks:
 ```php
 <?php declare(strict_types=1);
 
-use \de\codenamephp\deploymentchecks\base\Check\Collection\SequentialCollection;
+use de\codenamephp\deploymentchecks\base\Check\Collection\SequentialCollection;
 use de\codenamephp\deploymentchecks\base\Check\Result\WithExitCodeInterface;
 use de\codenamephp\deploymentchecks\base\ExitCode\DefaultExitCodes;
 use de\codenamephp\deploymentchecks\http\Check\HttpCheck;
