@@ -15,15 +15,20 @@
  *  limitations under the License.
  */
 
-namespace de\codenamephp\deploymentchecks\async\SuccessHandler;
+namespace de\codenamephp\deploymentchecks\http\Check\Test\Result;
 
-use de\codenamephp\deploymentchecks\base\Check\Result\Collection\ResultCollectionInterface;
 use de\codenamephp\deploymentchecks\base\Check\Result\ResultInterface;
+use de\codenamephp\deploymentchecks\base\Check\Result\WithMessageInterface;
 
-/**
- * Interface for parallel checks that want to define a custom success handler
- */
-interface SuccessHandlerInterface {
+final readonly class HttpTestResult implements ResultInterface, WithMessageInterface {
 
-  public function handle(ResultCollectionInterface $resultCollection, ResultInterface $result) : ResultInterface;
+  public function __construct(public bool $successful, public string $message) {}
+
+  public function successful() : bool {
+    return $this->successful;
+  }
+
+  public function message() : string {
+    return $this->message;
+  }
 }

@@ -15,14 +15,14 @@
  *  limitations under the License.
  */
 
-namespace de\codenamephp\deploymentchecks\async;
+namespace de\codenamephp\deploymentchecks\async\Check;
 
 use de\codenamephp\deploymentchecks\async\ErrorHandler\ErrorHandlerInterface;
 use de\codenamephp\deploymentchecks\async\ErrorHandler\RethrowException;
 use de\codenamephp\deploymentchecks\async\SuccessHandler\AddToResultCollection;
 use de\codenamephp\deploymentchecks\async\SuccessHandler\SuccessHandlerInterface;
 use de\codenamephp\deploymentchecks\base\Check\CheckInterface;
-use de\codenamephp\deploymentchecks\base\Result\ResultInterface;
+use de\codenamephp\deploymentchecks\base\Check\Result\ResultInterface;
 
 final readonly class ParallelCheck implements ParallelCheckInterface, WithErrorHandlerInterface {
 

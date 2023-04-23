@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<?php
 /*
  *  Copyright 2023 Bastian Schwarz <bastian@codename-php.de>.
  *
@@ -15,20 +15,21 @@
  *  limitations under the License.
  */
 
-namespace de\codenamephp\deploymentchecks\base\Result;
+namespace de\codenamephp\deploymentchecks\base\Check\Result;
 
 /**
- * Interface for results that have a name, usually used together with \de\codenamephp\deploymentchecks\base\Check\WithNameInterface in order to output
- * the name of the check was run e.g. to identify it a log or to print the status to the console
+ * Interface for results of deployment checks
  *
  * @psalm-api
  */
-interface WithNameInterface {
+interface ResultInterface {
 
   /**
-   * Returns the name of the result
+   * indicates a successful check. Ture if successful, false otherwise
    *
-   * @return string
+   * Basically a shortcut for getting the status from the exit code
+   *
+   * @return bool
    */
-  public function name() : string;
+  public function successful() : bool;
 }

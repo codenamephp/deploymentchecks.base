@@ -17,8 +17,8 @@
 
 namespace de\codenamephp\deploymentchecks\http\Check\Test;
 
-use de\codenamephp\deploymentchecks\base\Result\ResultInterface;
-use de\codenamephp\deploymentchecks\http\Result\HttpResult;
+use de\codenamephp\deploymentchecks\base\Check\Result\ResultInterface;
+use de\codenamephp\deploymentchecks\http\Check\Test\Result\HttpTestResult;
 use Psr\Http\Message\ResponseInterface;
 
 final class BodyEquals implements TestInterface {
@@ -26,6 +26,6 @@ final class BodyEquals implements TestInterface {
   public function __construct(public readonly string $expectedResponseText) {}
 
   public function test(ResponseInterface $response) : ResultInterface {
-    return new HttpResult((string) $response->getBody() === $this->expectedResponseText, sprintf("Expected response text '%s' got '%s'", $this->expectedResponseText, $response->getBody()));
+    return new HttpTestResult((string) $response->getBody() === $this->expectedResponseText, sprintf("Expected response text '%s' got '%s'", $this->expectedResponseText, $response->getBody()));
   }
 }

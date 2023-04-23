@@ -17,7 +17,7 @@
 
 namespace de\codenamephp\deploymentchecks\base\Check;
 
-use de\codenamephp\deploymentchecks\base\Result\ResultInterface;
+use de\codenamephp\deploymentchecks\base\Check\Result\ResultInterface;
 
 /**
  * Describes a single check that is run by the deployment checks and returns a result

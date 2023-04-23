@@ -17,7 +17,7 @@
 
 namespace de\codenamephp\deploymentchecks\async\ErrorHandler;
 
-use de\codenamephp\deploymentchecks\base\Result\Collection\ResultCollectionInterface;
+use de\codenamephp\deploymentchecks\base\Check\Result\Collection\ResultCollectionInterface;
 use Throwable;
 
 /**

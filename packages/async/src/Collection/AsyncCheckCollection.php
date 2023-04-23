@@ -16,11 +16,13 @@
  *  limitations under the License.
  */
 
-namespace de\codenamephp\deploymentchecks\async;
+namespace de\codenamephp\deploymentchecks\async\Collection;
 
+use de\codenamephp\deploymentchecks\async\Check\ParallelCheck;
+use de\codenamephp\deploymentchecks\async\Check\WithErrorHandlerInterface;
 use de\codenamephp\deploymentchecks\base\Check\CheckInterface;
-use de\codenamephp\deploymentchecks\base\Result\Collection\ResultCollection;
-use de\codenamephp\deploymentchecks\base\Result\ResultInterface;
+use de\codenamephp\deploymentchecks\base\Check\Result\Collection\ResultCollection;
+use de\codenamephp\deploymentchecks\base\Check\Result\ResultInterface;
 use Spatie\Async\Pool;
 use Throwable;
 

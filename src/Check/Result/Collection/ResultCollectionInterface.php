@@ -15,15 +15,16 @@
  *  limitations under the License.
  */
 
-namespace de\codenamephp\deploymentchecks\async\SuccessHandler;
+namespace de\codenamephp\deploymentchecks\base\Check\Result\Collection;
 
-use de\codenamephp\deploymentchecks\base\Check\Result\Collection\ResultCollectionInterface;
 use de\codenamephp\deploymentchecks\base\Check\Result\ResultInterface;
 
 /**
- * Interface for parallel checks that want to define a custom success handler
+ * A collection of results. Can be used to aggregate results from multiple checks, e.g. run multiple http checks and treat them as a group
+ *
+ * @psalm-api
  */
-interface SuccessHandlerInterface {
+interface ResultCollectionInterface extends ResultInterface {
 
-  public function handle(ResultCollectionInterface $resultCollection, ResultInterface $result) : ResultInterface;
+  public function add(ResultInterface $result) : ResultCollection;
 }

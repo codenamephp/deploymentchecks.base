@@ -17,7 +17,7 @@
 
 namespace de\codenamephp\deploymentchecks\http\Check\Test;
 
-use de\codenamephp\deploymentchecks\base\Result\ResultInterface;
+use de\codenamephp\deploymentchecks\base\Check\Result\ResultInterface;
 use Psr\Http\Message\ResponseInterface;
 
 /**

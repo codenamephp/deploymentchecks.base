@@ -15,14 +15,22 @@
  *  limitations under the License.
  */
 
-namespace de\codenamephp\deploymentchecks\base\Result;
+namespace de\codenamephp\deploymentchecks\base\test\Unit\Check\Result;
 
-/**
- * Interface for results that have a message, e.g. an error or additional information
- *
- * @psalm-api
- */
-interface WithMessageInterface {
+use de\codenamephp\deploymentchecks\base\Check\Result\WasSuccessful;
+use PHPUnit\Framework\TestCase;
 
-  public function message() : string;
+final class WasSuccessfulTest extends TestCase {
+
+  public function test__construct() : void {
+    $result = new WasSuccessful(true);
+
+    self::assertTrue($result->successful);
+  }
+
+  public function testSuccessful() : void {
+    $result = new WasSuccessful(true);
+
+    self::assertTrue($result->successful());
+  }
 }

@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<?php
 /*
  *  Copyright 2023 Bastian Schwarz <bastian@codename-php.de>.
  *
@@ -15,22 +15,16 @@
  *  limitations under the License.
  */
 
-namespace de\codenamephp\deploymentchecks\base\test\Unit\Result;
+namespace de\codenamephp\deploymentchecks\base\Check\Result;
 
-use de\codenamephp\deploymentchecks\base\Result\WasSuccessful;
-use PHPUnit\Framework\TestCase;
+use de\codenamephp\deploymentchecks\base\ExitCode\ExitCodeInterface;
 
-final class WasSuccessfulTest extends TestCase {
+/**
+ * Interface for results that have an exit code
+ *
+ * @psalm-api
+ */
+interface WithExitCodeInterface extends ResultInterface {
 
-  public function test__construct() : void {
-    $result = new WasSuccessful(true);
-
-    self::assertTrue($result->successful);
-  }
-
-  public function testSuccessful() : void {
-    $result = new WasSuccessful(true);
-
-    self::assertTrue($result->successful());
-  }
+  public function exitCode() : ExitCodeInterface;
 }

@@ -15,20 +15,14 @@
  *  limitations under the License.
  */
 
-namespace de\codenamephp\deploymentchecks\http\Result;
+namespace de\codenamephp\deploymentchecks\async\Check;
 
-use de\codenamephp\deploymentchecks\base\Result\ResultInterface;
-use de\codenamephp\deploymentchecks\base\Result\WithMessageInterface;
+use de\codenamephp\deploymentchecks\async\ErrorHandler\ErrorHandlerInterface;
 
-final readonly class HttpResult implements ResultInterface, WithMessageInterface {
+/**
+ * Interface for parallel checks that want to define a custom error handler
+ */
+interface WithErrorHandlerInterface {
 
-  public function __construct(public bool $successful, public string $message) {}
-
-  public function successful() : bool {
-    return $this->successful;
-  }
-
-  public function message() : string {
-    return $this->message;
-  }
+  public function errorHandler() : ErrorHandlerInterface;
 }

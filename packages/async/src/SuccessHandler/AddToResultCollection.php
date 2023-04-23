@@ -17,8 +17,8 @@
 
 namespace de\codenamephp\deploymentchecks\async\SuccessHandler;
 
-use de\codenamephp\deploymentchecks\base\Result\Collection\ResultCollectionInterface;
-use de\codenamephp\deploymentchecks\base\Result\ResultInterface;
+use de\codenamephp\deploymentchecks\base\Check\Result\Collection\ResultCollectionInterface;
+use de\codenamephp\deploymentchecks\base\Check\Result\ResultInterface;
 
 /**
  * Just adds the result to the collection

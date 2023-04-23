@@ -15,10 +15,10 @@
  *  limitations under the License.
  */
 
-namespace de\codenamephp\deploymentchecks\base\test\Unit\Result\Collection;
+namespace de\codenamephp\deploymentchecks\base\test\Unit\Check\Result\Collection;
 
-use de\codenamephp\deploymentchecks\base\Result\Collection\ResultCollection;
-use de\codenamephp\deploymentchecks\base\Result\ResultInterface;
+use de\codenamephp\deploymentchecks\base\Check\Result\Collection\ResultCollection;
+use de\codenamephp\deploymentchecks\base\Check\Result\ResultInterface;
 use PHPUnit\Framework\TestCase;
 
 final class ResultCollectionTest extends TestCase {

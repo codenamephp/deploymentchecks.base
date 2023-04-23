@@ -17,8 +17,8 @@
 
 namespace de\codenamephp\deploymentchecks\http\Check\Test;
 
-use de\codenamephp\deploymentchecks\base\Result\ResultInterface;
-use de\codenamephp\deploymentchecks\http\Result\HttpResult;
+use de\codenamephp\deploymentchecks\base\Check\Result\ResultInterface;
+use de\codenamephp\deploymentchecks\http\Check\Test\Result\HttpTestResult;
 use Psr\Http\Message\ResponseInterface;
 
 final class StatusCode implements TestInterface {
@@ -26,7 +26,7 @@ final class StatusCode implements TestInterface {
   public function __construct(public readonly int $expectedResponseCode) {}
 
   public function test(ResponseInterface $response) : ResultInterface {
-    return new HttpResult(
+    return new HttpTestResult(
       $response->getStatusCode() === $this->expectedResponseCode,
       sprintf("Expected response code '%d' got '%d'", $this->expectedResponseCode, $response->getStatusCode()),
     );

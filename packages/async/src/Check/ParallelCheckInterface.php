@@ -15,10 +15,10 @@
  *  limitations under the License.
  */
 
-namespace de\codenamephp\deploymentchecks\async;
+namespace de\codenamephp\deploymentchecks\async\Check;
 
 use de\codenamephp\deploymentchecks\async\SuccessHandler\SuccessHandlerInterface;
-use de\codenamephp\deploymentchecks\base\Result\ResultInterface;
+use de\codenamephp\deploymentchecks\base\Check\Result\ResultInterface;
 
 /**
  * Interface for checks that can be used in parallel using the async pool

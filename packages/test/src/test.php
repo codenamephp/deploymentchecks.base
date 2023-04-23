@@ -16,7 +16,7 @@
  *  limitations under the License.
  */
 
-use de\codenamephp\deploymentchecks\async\AsyncCheckCollection;
+use de\codenamephp\deploymentchecks\async\Collection\AsyncCheckCollection;
 use de\codenamephp\deploymentchecks\http\Check\HttpCheck;
 use de\codenamephp\deploymentchecks\http\Check\Test\StatusCode;
 use GuzzleHttp\Psr7\Request;

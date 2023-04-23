@@ -15,7 +15,7 @@
  *  limitations under the License.
  */
 
-namespace de\codenamephp\deploymentchecks\base\Result;
+namespace de\codenamephp\deploymentchecks\base\Check\Result;
 
 /**
  * A single result of a check with just the success state as immutable property

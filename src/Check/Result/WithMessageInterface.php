@@ -15,14 +15,14 @@
  *  limitations under the License.
  */
 
-namespace de\codenamephp\deploymentchecks\async;
-
-use de\codenamephp\deploymentchecks\async\ErrorHandler\ErrorHandlerInterface;
+namespace de\codenamephp\deploymentchecks\base\Check\Result;
 
 /**
- * Interface for parallel checks that want to define a custom error handler
+ * Interface for results that have a message, e.g. an error or additional information
+ *
+ * @psalm-api
  */
-interface WithErrorHandlerInterface {
+interface WithMessageInterface {
 
-  public function errorHandler() : ErrorHandlerInterface;
+  public function message() : string;
 }

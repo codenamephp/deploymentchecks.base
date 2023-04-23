@@ -15,16 +15,20 @@
  *  limitations under the License.
  */
 
-namespace de\codenamephp\deploymentchecks\base\Result\Collection;
-
-use de\codenamephp\deploymentchecks\base\Result\ResultInterface;
+namespace de\codenamephp\deploymentchecks\base\Check\Result;
 
 /**
- * A collection of results. Can be used to aggregate results from multiple checks, e.g. run multiple http checks and treat them as a group
+ * Interface for results that have a name, usually used together with \de\codenamephp\deploymentchecks\base\Check\WithNameInterface in order to output
+ * the name of the check was run e.g. to identify it a log or to print the status to the console
  *
  * @psalm-api
  */
-interface ResultCollectionInterface extends ResultInterface {
+interface WithNameInterface {
 
-  public function add(ResultInterface $result) : ResultCollection;
+  /**
+   * Returns the name of the result
+   *
+   * @return string
+   */
+  public function name() : string;
 }
