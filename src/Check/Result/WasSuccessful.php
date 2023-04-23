@@ -22,9 +22,9 @@ namespace de\codenamephp\deploymentchecks\base\Check\Result;
  *
  * @psalm-api
  */
-final class WasSuccessful implements ResultInterface {
+final readonly class WasSuccessful implements ResultInterface {
 
-  public function __construct(public readonly bool $successful) {}
+  public function __construct(public bool $successful) {}
 
   public function successful() : bool {
     return $this->successful;

@@ -25,10 +25,5 @@ namespace de\codenamephp\deploymentchecks\base\Check\Result;
  */
 interface WithNameInterface {
 
-  /**
-   * Returns the name of the result
-   *
-   * @return string
-   */
   public function name() : string;
 }

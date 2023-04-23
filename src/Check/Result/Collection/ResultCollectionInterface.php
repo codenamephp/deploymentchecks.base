@@ -20,7 +20,7 @@ namespace de\codenamephp\deploymentchecks\base\Check\Result\Collection;
 use de\codenamephp\deploymentchecks\base\Check\Result\ResultInterface;
 
 /**
- * A collection of results. Can be used to aggregate results from multiple checks, e.g. run multiple http checks and treat them as a group
+ * Interface for collection of results. Can be used to aggregate results from multiple checks, e.g. run multiple http checks and treat them as a group
  *
  * @psalm-api
  */
