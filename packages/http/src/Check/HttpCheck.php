@@ -18,9 +18,9 @@
 namespace de\codenamephp\deploymentchecks\http\Check;
 
 use de\codenamephp\deploymentchecks\base\Check\CheckInterface;
-use de\codenamephp\deploymentchecks\base\Check\Result\Collection\ResultCollection;
 use de\codenamephp\deploymentchecks\base\Check\Result\ResultInterface;
 use de\codenamephp\deploymentchecks\base\Check\WithNameInterface;
+use de\codenamephp\deploymentchecks\http\Check\Result\HttpCheckResult;
 use de\codenamephp\deploymentchecks\http\Check\Test\TestInterface;
 use GuzzleHttp\Client;
 use Psr\Http\Message\RequestInterface;
@@ -47,6 +47,6 @@ final class HttpCheck implements CheckInterface, WithNameInterface {
   public function run() : ResultInterface {
     $client = new Client();
     $response = $client->send($this->request);
-    return new ResultCollection(...array_map(fn(TestInterface $test) => $test->test($response), $this->tests));
+    return new HttpCheckResult($this->name(), ...array_map(fn(TestInterface $test) => $test->test($response), $this->tests));
   }
 }

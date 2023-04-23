@@ -20,7 +20,6 @@ use de\codenamephp\deploymentchecks\async\Collection\AsyncCheckCollection;
 use de\codenamephp\deploymentchecks\http\Check\HttpCheck;
 use de\codenamephp\deploymentchecks\http\Check\Test\StatusCode;
 use GuzzleHttp\Psr7\Request;
-use Spatie\Fork\Fork;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
