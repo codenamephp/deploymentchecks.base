@@ -37,6 +37,67 @@ code and leaves the rest to the build system that was running the checks:
 ```php
 <?php declare(strict_types=1);
 
+use de\codenamephp\deploymentchecks\base\Check\Result\WithExitCodeInterface;
+use de\codenamephp\deploymentchecks\base\ExitCode\DefaultExitCodes;
+use de\codenamephp\deploymentchecks\http\Check\HttpCheck;
+use de\codenamephp\deploymentchecks\http\Check\Test\StatusCode;
+use GuzzleHttp\Psr7\Request;
+
+require_once __DIR__ . '/../vendor/autoload.php';
+
+$result = (new HttpCheck(
+    new Request('GET', 'https://localhost/'),
+    'Frontpage should be available',
+    new StatusCode(200),
+))->run();
+
+exit($result instanceof WithExitCodeInterface ? $result->exitCode() : ($result->successful() ? DefaultExitCodes::SUCCESSFUL->value : DefaultExitCodes::ERROR->value));
+```
+
+This example uses the http package to perform http requests and run tests on them. It creates a single check with one test,
+runs it and checks the result. If it is a result with an exit code, the exit code is used. If not, the result is checked for success and
+the default exit codes are used.
+
+Since most CI/CD systems will run the script and check the exit code, this should already be enough to get the system to fail if one of the checks fail.
+
+It's very easy to run multiple checks:
+
+```php
+<?php declare(strict_types=1);
+
+use \de\codenamephp\deploymentchecks\base\Check\Collection\SequentialCollection;
+use de\codenamephp\deploymentchecks\base\Check\Result\WithExitCodeInterface;
+use de\codenamephp\deploymentchecks\base\ExitCode\DefaultExitCodes;
+use de\codenamephp\deploymentchecks\http\Check\HttpCheck;
+use de\codenamephp\deploymentchecks\http\Check\Test\StatusCode;
+use GuzzleHttp\Psr7\Request;
+
+require_once __DIR__ . '/../vendor/autoload.php';
+
+$result = (new SequentialCollection(
+  new HttpCheck(
+    new Request('GET', 'https://localhost'),
+    'Frontpage should be available',
+    new StatusCode(200),
+  ),
+  new HttpCheck(
+    new Request('GET', 'https://localhost/admin'),
+    'Admin login page should be available',
+    new StatusCode(401),
+  )
+))->run();
+
+exit($result instanceof WithExitCodeInterface ? $result->exitCode() : ($result->successful() ? DefaultExitCodes::SUCCESSFUL->value : DefaultExitCodes::ERROR->value));
+```
+
+Not much has changed. The only difference is that the checks are now wrapped in a collection that will run them sequentially. If one fails, the result will be
+unsuccessful.
+
+It's also very easy to run checks in parallel. The next example uses the async package to run the checks in parallel:
+
+```php
+<?php declare(strict_types=1);
+
 use de\codenamephp\deploymentchecks\async\Collection\AsyncCheckCollection;
 use de\codenamephp\deploymentchecks\base\Check\Result\WithExitCodeInterface;
 use de\codenamephp\deploymentchecks\base\ExitCode\DefaultExitCodes;
@@ -62,8 +123,4 @@ $result = (new AsyncCheckCollection(new \Spatie\Async\Pool(),
 exit($result instanceof WithExitCodeInterface ? $result->exitCode() : ($result->successful() ? DefaultExitCodes::SUCCESSFUL->value : DefaultExitCodes::ERROR->value));
 ```
 
-This example uses the http package to perform http requests and run tests on them together with the async package to the requests are tested in parallel.
-At the end the result is checked. If it is a result with an exit code, the exit code is used. If not, the result is checked for success and
-the default exit codes are used.
-
-Since most CI/CD systems will run the script and check the exit code, this should already be enough to get the system to fail if one of the checks fail.
+Again, not much has changed. The only difference is that the checks are now wrapped in a collection that will run them in parallel.
