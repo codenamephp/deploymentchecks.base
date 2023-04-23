@@ -1,4 +1,5 @@
 /docker export-ignore
+/packages export-ignore
 /test export-ignore
 /tools export-ignore
 /.idea export-ignore
@@ -10,8 +11,9 @@
 /.gitattributes export-ignore
 /.env.dist
 /docker-compose.yml export-ignore
-/infection.json.dist export-ignore
+/infection.json*.dist export-ignore
 /phive.xml export-ignore
 /psalm.xml export-ignore
 
 *.php text=auto eol=lf
+*.sh text=auto eol=lf
