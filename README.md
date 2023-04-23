@@ -65,7 +65,7 @@ It's very easy to run multiple checks:
 ```php
 <?php declare(strict_types=1);
 
-use de\codenamephp\deploymentchecks\base\Check\Collection\SequentialCollection;
+use de\codenamephp\deploymentchecks\base\Check\Collection\SequentialCheckCollection;
 use de\codenamephp\deploymentchecks\base\Check\Result\WithExitCodeInterface;
 use de\codenamephp\deploymentchecks\base\ExitCode\DefaultExitCodes;
 use de\codenamephp\deploymentchecks\http\Check\HttpCheck;
@@ -74,7 +74,7 @@ use GuzzleHttp\Psr7\Request;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-$result = (new SequentialCollection(
+$result = (new SequentialCheckCollection(
   new HttpCheck(
     new Request('GET', 'https://localhost'),
     'Frontpage should be available',

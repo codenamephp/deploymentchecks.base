@@ -21,6 +21,8 @@
       <path value="$PROJECT_DIR$/packages/http/vendor/guzzlehttp/guzzle" />
       <path value="$PROJECT_DIR$/packages/http/vendor/guzzlehttp/promises" />
       <path value="$PROJECT_DIR$/packages/http/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/vendor/mockery/mockery" />
+      <path value="$PROJECT_DIR$/vendor/hamcrest/hamcrest-php" />
     </include_path>
   </component>
   <component name="PhpInterpreters">

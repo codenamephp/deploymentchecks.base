@@ -7,6 +7,7 @@
       <sourceFolder url="file://$MODULE_DIR$/packages/http/src" isTestSource="false" packagePrefix="de\codenamephp\deploymentchecks\http\" />
       <sourceFolder url="file://$MODULE_DIR$/packages/http/test" isTestSource="true" packagePrefix="de\codenamephp\deploymentchecks\http\test\" />
       <sourceFolder url="file://$MODULE_DIR$/packages/http/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/.cache" />
       <excludeFolder url="file://$MODULE_DIR$/.github" />
@@ -20,6 +21,8 @@
       <excludeFolder url="file://$MODULE_DIR$/packages/http/vendor/psr/http-message" />
       <excludeFolder url="file://$MODULE_DIR$/packages/http/vendor/ralouphie/getallheaders" />
       <excludeFolder url="file://$MODULE_DIR$/packages/http/vendor/symfony/deprecation-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/hamcrest/hamcrest-php" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/mockery/mockery" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

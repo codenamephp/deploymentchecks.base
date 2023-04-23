@@ -24,8 +24,10 @@ use de\codenamephp\deploymentchecks\base\Check\Result\ResultInterface;
 
 /**
  * Collects multiple checks and executes them sequentially and adds their results to a result collection
+ *
+ * @psalm-api
  */
-final class SequentialCollection implements CheckInterface {
+final class SequentialCheckCollection implements CheckInterface {
 
   public readonly array $checks;
 
