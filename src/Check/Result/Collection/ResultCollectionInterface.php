@@ -26,5 +26,5 @@ use de\codenamephp\deploymentchecks\base\Check\Result\ResultInterface;
  */
 interface ResultCollectionInterface extends ResultInterface {
 
-  public function add(ResultInterface $result) : ResultCollection;
+  public function add(ResultInterface $result) : self;
 }
