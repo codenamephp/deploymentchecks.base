@@ -28,16 +28,13 @@
       <excludeFolder url="file://$MODULE_DIR$/packages/http/vendor/symfony/deprecation-contracts" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/hamcrest/hamcrest-php" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/mockery/mockery" />
-      <excludeFolder url="file://$MODULE_DIR$/packages/test/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/packages/test/vendor/guzzlehttp/guzzle" />
       <excludeFolder url="file://$MODULE_DIR$/packages/test/vendor/guzzlehttp/promises" />
       <excludeFolder url="file://$MODULE_DIR$/packages/test/vendor/guzzlehttp/psr7" />
-      <excludeFolder url="file://$MODULE_DIR$/packages/test/vendor/laravel/serializable-closure" />
       <excludeFolder url="file://$MODULE_DIR$/packages/test/vendor/psr/http-client" />
       <excludeFolder url="file://$MODULE_DIR$/packages/test/vendor/psr/http-factory" />
       <excludeFolder url="file://$MODULE_DIR$/packages/test/vendor/psr/http-message" />
       <excludeFolder url="file://$MODULE_DIR$/packages/test/vendor/ralouphie/getallheaders" />
-      <excludeFolder url="file://$MODULE_DIR$/packages/test/vendor/spatie/async" />
       <excludeFolder url="file://$MODULE_DIR$/packages/test/vendor/symfony/deprecation-contracts" />
       <excludeFolder url="file://$MODULE_DIR$/packages/test/vendor/symfony/process" />
       <excludeFolder url="file://$MODULE_DIR$/packages/test/vendor/codenamephp/deploymentchecks.http" />
@@ -46,6 +43,7 @@
       <excludeFolder url="file://$MODULE_DIR$/packages/test/vendor/symfony/dom-crawler" />
       <excludeFolder url="file://$MODULE_DIR$/packages/test/vendor/symfony/polyfill-ctype" />
       <excludeFolder url="file://$MODULE_DIR$/packages/test/vendor/symfony/polyfill-mbstring" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/test/vendor/codenamephp/deploymentchecks.async" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

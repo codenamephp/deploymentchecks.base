@@ -23,23 +23,21 @@
       <path value="$PROJECT_DIR$/packages/http/vendor/ralouphie/getallheaders" />
       <path value="$PROJECT_DIR$/vendor/mockery/mockery" />
       <path value="$PROJECT_DIR$/vendor/hamcrest/hamcrest-php" />
-      <path value="$PROJECT_DIR$/packages/test/vendor/guzzlehttp/psr7" />
-      <path value="$PROJECT_DIR$/packages/test/vendor/guzzlehttp/promises" />
-      <path value="$PROJECT_DIR$/packages/test/vendor/composer" />
-      <path value="$PROJECT_DIR$/packages/test/vendor/guzzlehttp/guzzle" />
-      <path value="$PROJECT_DIR$/packages/test/vendor/symfony/polyfill-mbstring" />
-      <path value="$PROJECT_DIR$/packages/test/vendor/symfony/css-selector" />
-      <path value="$PROJECT_DIR$/packages/test/vendor/symfony/dom-crawler" />
-      <path value="$PROJECT_DIR$/packages/test/vendor/symfony/deprecation-contracts" />
-      <path value="$PROJECT_DIR$/packages/test/vendor/psr/http-factory" />
-      <path value="$PROJECT_DIR$/packages/test/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/packages/test/vendor/codenamephp/deploymentchecks.async" />
+      <path value="$PROJECT_DIR$/packages/test/vendor/codenamephp/deploymentchecks.http" />
+      <path value="$PROJECT_DIR$/packages/test/vendor/psr/http-client" />
       <path value="$PROJECT_DIR$/packages/test/vendor/psr/http-message" />
       <path value="$PROJECT_DIR$/packages/test/vendor/symfony/process" />
-      <path value="$PROJECT_DIR$/packages/test/vendor/psr/http-client" />
-      <path value="$PROJECT_DIR$/packages/test/vendor/spatie/async" />
-      <path value="$PROJECT_DIR$/packages/test/vendor/codenamephp/deploymentchecks.http" />
-      <path value="$PROJECT_DIR$/packages/test/vendor/laravel/serializable-closure" />
+      <path value="$PROJECT_DIR$/packages/test/vendor/psr/http-factory" />
+      <path value="$PROJECT_DIR$/packages/test/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/packages/test/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/packages/test/vendor/symfony/dom-crawler" />
+      <path value="$PROJECT_DIR$/packages/test/vendor/symfony/css-selector" />
       <path value="$PROJECT_DIR$/packages/test/vendor/masterminds/html5" />
+      <path value="$PROJECT_DIR$/packages/test/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/packages/test/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/packages/test/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/packages/test/vendor/guzzlehttp/psr7" />
       <path value="$PROJECT_DIR$/packages/test/vendor/ralouphie/getallheaders" />
     </include_path>
   </component>
