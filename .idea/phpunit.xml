@@ -6,6 +6,9 @@
         <option value="$PROJECT_DIR$/packages/http/tests" />
         <option value="$PROJECT_DIR$/packages/http/tests" />
         <option value="$PROJECT_DIR$/tests" />
+        <option value="$PROJECT_DIR$/tests" />
+        <option value="$PROJECT_DIR$/packages/test/tests" />
+        <option value="$PROJECT_DIR$/packages/test/tests" />
       </list>
     </option>
   </component>

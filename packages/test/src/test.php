@@ -19,20 +19,20 @@
 use de\codenamephp\deploymentchecks\async\Collection\AsyncCheckCollection;
 use de\codenamephp\deploymentchecks\base\Check\Result\WithExitCodeInterface;
 use de\codenamephp\deploymentchecks\base\ExitCode\DefaultExitCodes;
-use de\codenamephp\deploymentchecks\http\Check\HttpCheck;
-use de\codenamephp\deploymentchecks\http\Check\Test\StatusCode;
+use de\codenamephp\deploymentchecks\http\RunTestsOnHttpResponse;
+use de\codenamephp\deploymentchecks\http\Test\StatusCode;
 use GuzzleHttp\Psr7\Request;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
 $result = (new AsyncCheckCollection(new \Spatie\Async\Pool(),
-  new HttpCheck(
-    new Request('GET', 'https://localhost'),
+  new RunTestsOnHttpResponse(
+    new Request('GET', 'http://localhost'),
     'Frontpage should be available',
     new StatusCode(200),
   ),
-  new HttpCheck(
-    new Request('GET', 'https://localhost/admin'),
+  new RunTestsOnHttpResponse(
+    new Request('GET', 'http://localhost/admin'),
     'Admin login page should be available',
     new StatusCode(401),
   )

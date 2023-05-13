@@ -39,13 +39,12 @@ code and leaves the rest to the build system that was running the checks:
 
 use de\codenamephp\deploymentchecks\base\Check\Result\WithExitCodeInterface;
 use de\codenamephp\deploymentchecks\base\ExitCode\DefaultExitCodes;
-use de\codenamephp\deploymentchecks\http\Check\HttpCheck;
-use de\codenamephp\deploymentchecks\http\Check\Test\StatusCode;
-use GuzzleHttp\Psr7\Request;
+use de\codenamephp\deploymentchecks\http\RunTestsOnHttpResponse;
+use de\codenamephp\deploymentchecks\http\Test\StatusCode;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-$result = (new HttpCheck(
+$result = (new RunTestsOnHttpResponse(
     new Request('GET', 'https://localhost/'),
     'Frontpage should be available',
     new StatusCode(200),
@@ -68,19 +67,18 @@ It's very easy to run multiple checks:
 use de\codenamephp\deploymentchecks\base\Check\Collection\SequentialCheckCollection;
 use de\codenamephp\deploymentchecks\base\Check\Result\WithExitCodeInterface;
 use de\codenamephp\deploymentchecks\base\ExitCode\DefaultExitCodes;
-use de\codenamephp\deploymentchecks\http\Check\HttpCheck;
-use de\codenamephp\deploymentchecks\http\Check\Test\StatusCode;
-use GuzzleHttp\Psr7\Request;
+use de\codenamephp\deploymentchecks\http\RunTestsOnHttpResponse;
+use de\codenamephp\deploymentchecks\http\Test\StatusCode;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
 $result = (new SequentialCheckCollection(
-  new HttpCheck(
+  new RunTestsOnHttpResponse(
     new Request('GET', 'https://localhost'),
     'Frontpage should be available',
     new StatusCode(200),
   ),
-  new HttpCheck(
+  new RunTestsOnHttpResponse(
     new Request('GET', 'https://localhost/admin'),
     'Admin login page should be available',
     new StatusCode(401),
@@ -101,19 +99,19 @@ It's also very easy to run checks in parallel. The next example uses the async p
 use de\codenamephp\deploymentchecks\async\Collection\AsyncCheckCollection;
 use de\codenamephp\deploymentchecks\base\Check\Result\WithExitCodeInterface;
 use de\codenamephp\deploymentchecks\base\ExitCode\DefaultExitCodes;
-use de\codenamephp\deploymentchecks\http\Check\HttpCheck;
-use de\codenamephp\deploymentchecks\http\Check\Test\StatusCode;
+use de\codenamephp\deploymentchecks\http\RunTestsOnHttpResponse;
+use de\codenamephp\deploymentchecks\http\Test\StatusCode;
 use GuzzleHttp\Psr7\Request;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
 $result = (new AsyncCheckCollection(new \Spatie\Async\Pool(),
-  new HttpCheck(
+  new RunTestsOnHttpResponse(
     new Request('GET', 'https://localhost'),
     'Frontpage should be available',
     new StatusCode(200),
   ),
-  new HttpCheck(
+  new RunTestsOnHttpResponse(
     new Request('GET', 'https://localhost/admin'),
     'Admin login page should be available',
     new StatusCode(401),
